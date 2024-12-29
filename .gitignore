@@ -1,0 +1,5 @@
+node_modules/
+# The / means it ignores all node_modules in the current folder and in any subsequent subfolder, SLAYY 
+.DS_Store
+.vscode
+.env
