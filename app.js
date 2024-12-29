@@ -55,11 +55,12 @@ app.use(
     })
 );
 
+const secret = process.env.SECRET
 const store = MongoStore.create({
     mongoUrl: dbURL,
     touchAfter: 24 * 60 * 60,
     crypto: {
-        secret: 'thisshouldbeabettersecret!'
+        secret
     }
 });
 
@@ -69,7 +70,7 @@ store.on("error", function(err){
 
 const sessionConfig={
     store,
-    secret: "ThisIsASecret",
+    secret,
     resave:false,
     saveUninitialized:true,
     // Adding options for the session cookie
